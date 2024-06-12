@@ -2,7 +2,19 @@ openapi: 3.0.3
 info:
   title: Ruleset Checking Tool Web Service API
   description: |-
-  
+    Ruleset checking tool web server API documentation.
+    PNNL Ruleset Checking Tool (PNNL-RCT) is developed in support of ASHRAE Standard 229P. More information about 229P can be found on ASHRAE 229 Project Committee [page](https://tpc.ashrae.org/?cmtKey=9ffa4db6-eebe-4418-a8c4-d0c220603735). The PNNL-RCT is now hosted as a web service and available for public testing.
+    
+    PNNL-RCT supports two workflows, one is the _project evaluation workflow_ and the other is the _software testing workflow_. The project evaluation workflow requires a set of Ruleset Project Descriptions (RPD) files. These json files shall be formatted following the Ruleset Evaluation Schema (RES), a data schema described in the Standard 229p. The PNNL-RCT loads these files, evaluate rules against these data and export evaluation reports.
+    
+    This documentation described the workflow of the API services provided by PNNL-RCT. The current version is __0.0.1__. Current supported API functions include a project evaluation workflow and three miscelaneous functions.
+    
+    Some useful links:
+    - [ruleset-checking-tool repository](https://github.com/pnnl/ruleset-checking-tool)
+    - [ASHRAE Standard Proejct Committee 229](https://tpc.ashrae.org/?cmtKey=9ffa4db6-eebe-4418-a8c4-d0c220603735)
+    - [ruleset-checking-tool wiki](https://github.com/pnnl/ruleset-checking-tool/wiki)
+    - [Ruleset Evaluation Schema](https://github.com/open229/ruleset-model-description-schema/blob/develop/docs229/ASHRAE229.schema.json)
+    - [Example ruleset project description files](https://github.com/pnnl/ruleset-checking-tool/tree/master/examples/chicago_demo)
 
   termsOfService: NA
   contact:
@@ -10,12 +22,13 @@ info:
   license:
     name: MIT
     url: https://github.com/pnnl/ruleset-checking-tool/blob/master/LICENSE
-  version: 1.0.11
+  version: 0.0.1
 externalDocs:
   description: Find out more about Ruleset Checking Tool
   url: http://github.com/pnnl/ruleset-checking-tool
 servers:
   - url: https://qe5fccavsl.execute-api.us-west-2.amazonaws.com/prod
+  - url: https://k478q2fmm0.execute-api.us-west-2.amazonaws.com/prod
 tags:
   - name: project evaluation
     description: project evaluation workflow
@@ -106,7 +119,7 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/InternalError'
+                  $ref: '#/components/schemas/InternalError'     
     post:
       tags:
        - project evaluation
@@ -160,7 +173,7 @@ paths:
         '500':
           description: Internal error.
           content:
-            application/json:
+            application/json: 
               schema:
                 $ref: '#/components/schemas/InternalError'
   /rules:
@@ -192,7 +205,7 @@ paths:
         '500':
           description: Internal error.
           content:
-            application/json:
+            application/json: 
               schema:
                 $ref: '#/components/schemas/InternalError'
   /reports:
@@ -206,7 +219,7 @@ paths:
           in: query
           description: ruleset tag, for example ashrae9012019.
           required: true
-          schema:
+          schema: 
             type: string
       responses:
         '200':
@@ -224,7 +237,7 @@ paths:
         '500':
           description: Internal error.
           content:
-            application/json:
+            application/json: 
               schema:
                 $ref: '#/components/schemas/InternalError'
 components:
@@ -271,7 +284,7 @@ components:
           example: 10
     RuleSetReports:
       type: object
-      properties:
+      properties: 
         num_reports:
           type: integer
           format: int64
