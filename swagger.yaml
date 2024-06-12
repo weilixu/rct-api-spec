@@ -5,9 +5,19 @@ info:
     Ruleset checking tool web server API documentation.
     PNNL Ruleset Checking Tool (PNNL-RCT) is developed in support of ASHRAE Standard 229P. More information about 229P can be found on ASHRAE 229 Project Committee [page](https://tpc.ashrae.org/?cmtKey=9ffa4db6-eebe-4418-a8c4-d0c220603735). The PNNL-RCT is now hosted as a web service and available for public testing.
     
-    PNNL-RCT supports two workflows, one is the _project evaluation workflow_ and the other is the _software testing workflow_. The project evaluation workflow requires a set of Ruleset Project Descriptions (RPD) files. These json files shall be formatted following the Ruleset Evaluation Schema (RES), a data schema described in the Standard 229p. The PNNL-RCT loads these files, evaluate rules against these data and export evaluation reports.
+    PNNL-RCT supports two workflows, one is the _project evaluation workflow_ and the other is the _software testing workflow_. 
     
-    This documentation described the workflow of the API services provided by PNNL-RCT. The current version is __0.0.1__. Current supported API functions include a project evaluation workflow and three miscelaneous functions.
+    ## Project evaluation workflow
+    The project evaluation workflow requires a set of Ruleset Project Descriptions (RPD) files and query parameters (see details in `POST -> /evaluate`). The workflow consists of three main steps:
+    
+    1. **Evaluate**: Make a `POST /evaluate` call to initiate the RCT evaluation process. This returns a calculation `sessionId`.
+    2. **Check Status**: Use the `sessionId` from step 1 to call `GET /evaluate/{id}` and check the status of the evaluation.
+    3. **Get Results**: Once the calculation status is `SUCCESS`, call `POST /evaluate/{id}` with the `sessionId` to retrieve the results.
+    
+    ## Software testing workflow
+    TBD
+    
+    This PNNL-RCT API version is __0.0.1__. Current supported API functions include a project evaluation workflow and three miscelaneous functions.
     
     Some useful links:
     - [ruleset-checking-tool repository](https://github.com/pnnl/ruleset-checking-tool)
