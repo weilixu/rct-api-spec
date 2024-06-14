@@ -37,7 +37,6 @@ externalDocs:
   description: Find out more about Ruleset Checking Tool
   url: http://github.com/pnnl/ruleset-checking-tool
 servers:
-  - url: https://qe5fccavsl.execute-api.us-west-2.amazonaws.com/prod
   - url: https://k478q2fmm0.execute-api.us-west-2.amazonaws.com/prod
 tags:
   - name: project evaluation
