@@ -28,7 +28,7 @@ info:
     - [Example ruleset project description files](https://github.com/pnnl/ruleset-checking-tool/tree/master/examples/chicago_demo)
 
     ### Note: 
-    This page is created for review purpose. The URL endpoint included in this page only limits a few IP access. To gain access, please email your request to the author.
+    This page is created for review purpose. The URL endpoint included in this page allows only a few IP addresses. To add your IP address to the white list, please email your request to the developer.
 
   termsOfService: NA
   contact:
