@@ -27,6 +27,9 @@ info:
     - [Ruleset Evaluation Schema](https://github.com/open229/ruleset-model-description-schema/blob/develop/docs229/ASHRAE229.schema.json)
     - [Example ruleset project description files](https://github.com/pnnl/ruleset-checking-tool/tree/master/examples/chicago_demo)
 
+    ### Note: 
+    This page is created for review purpose. The URL endpoint included in this page only limits a few IP access. To gain access, please email your request to the author.
+
   termsOfService: NA
   contact:
     email: weili.xu@pnnl.gov
@@ -38,7 +41,7 @@ externalDocs:
   description: Find out more about Ruleset Checking Tool
   url: http://github.com/pnnl/ruleset-checking-tool
 servers:
-  - url: localhost
+  - url: https://k478q2fmm0.execute-api.us-west-2.amazonaws.com/prod/
 tags:
   - name: project evaluation
     description: project evaluation workflow
